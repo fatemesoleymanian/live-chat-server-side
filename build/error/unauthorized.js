@@ -9,3 +9,4 @@ class UnauthorizedError extends custom_error_1.CustomAPIError {
     }
 }
 module.exports = UnauthorizedError;
+//# sourceMappingURL=unauthorized.js.map

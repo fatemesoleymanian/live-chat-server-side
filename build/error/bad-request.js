@@ -9,3 +9,4 @@ class BadRequest extends custom_error_1.CustomAPIError {
     }
 }
 module.exports = BadRequest;
+//# sourceMappingURL=bad-request.js.map

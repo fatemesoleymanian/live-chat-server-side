@@ -1,4 +1,3 @@
-"use strict";
 const yup = require("yup");
 //* Register Schema
 const registerValidator = yup.object().shape({
@@ -19,3 +18,4 @@ const registerValidator = yup.object().shape({
 module.exports = {
     registerValidator
 };
+//# sourceMappingURL=auth.js.map

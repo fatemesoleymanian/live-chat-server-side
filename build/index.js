@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 app.use('/api/v1/chat', authMiddleware, ChatRouter);
 app.use('/api/v1/user', UserRouter);
 app.use('/api/v1/message', authMiddleware, MessageRouter);
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 const server = app.listen(port, () => console.log(`Server is listening on port ${port}...`));
 const io = new socket_io_1.Server(server, {
     cors: {
@@ -69,3 +69,4 @@ io.on("connection", (socket) => {
         });
     });
 });
+//# sourceMappingURL=index.js.map

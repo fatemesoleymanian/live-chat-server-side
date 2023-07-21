@@ -13,3 +13,4 @@ router.post('/group', createGroupChat);
 router.put('/leave-group', leaveGroupOrClearChat);
 router.put('/add-member', addSelfToGroup);
 module.exports = router;
+//# sourceMappingURL=ChatRouter.js.map

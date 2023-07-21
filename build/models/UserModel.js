@@ -1,4 +1,13 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -32,11 +41,13 @@ const UserSchema = new mongoose_1.default.Schema({
 }, {
     timestamps: true
 });
-UserSchema.pre('save', async function (next) {
-    //hash password with bcrypyjs before inserting
-    const salt = await bcryptjs.genSalt(10);
-    this.password = await bcryptjs.hash(this.password, salt);
-    next();
+UserSchema.pre('save', function (next) {
+    return __awaiter(this, void 0, void 0, function* () {
+        //hash password with bcrypyjs before inserting
+        const salt = yield bcryptjs.genSalt(10);
+        this.password = yield bcryptjs.hash(this.password, salt);
+        next();
+    });
 });
 UserSchema.methods.getName = function () {
     return this.name;
@@ -55,8 +66,11 @@ UserSchema.methods.createJWT = function () {
 UserSchema.statics.registerValidation = function (body) {
     return registerValidator.validate(body, { abortEarly: false });
 };
-UserSchema.methods.comparePassword = async function (candidatePassword) {
-    const isMatch = await bcryptjs.compare(candidatePassword, this.password);
-    return isMatch;
+UserSchema.methods.comparePassword = function (candidatePassword) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const isMatch = yield bcryptjs.compare(candidatePassword, this.password);
+        return isMatch;
+    });
 };
 module.exports = mongoose_1.default.model('User', UserSchema);
+//# sourceMappingURL=UserModel.js.map

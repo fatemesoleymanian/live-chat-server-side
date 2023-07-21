@@ -9,3 +9,4 @@ class NotFoundError extends custom_error_1.CustomAPIError {
     }
 }
 module.exports = NotFoundError;
+//# sourceMappingURL=notFoundError.js.map

@@ -27,3 +27,4 @@ const MessageSchema = new mongoose_1.default.Schema({
     timestamps: true
 });
 module.exports = mongoose_1.default.model('Message', MessageSchema);
+//# sourceMappingURL=MessageModel.js.map

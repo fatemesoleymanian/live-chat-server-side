@@ -9,3 +9,4 @@ const { createMessage, fetchMessagesOfChat } = require('../controller/MessageCon
 router.post('/', createMessage);
 router.get('/:chatId', fetchMessagesOfChat);
 module.exports = router;
+//# sourceMappingURL=MessageRouter.js.map

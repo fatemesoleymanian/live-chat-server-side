@@ -12,3 +12,4 @@ router.post('/auth/login', login);
 router.post('/auth/register', register);
 router.get('/', auth, index);
 module.exports = router;
+//# sourceMappingURL=UserRouter.js.map

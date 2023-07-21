@@ -1,4 +1,3 @@
-"use strict";
 const BadRequest = require('./bad-request');
 const CustomAPIError = require('./custom-error');
 const UnauthorizedError = require('./unauthorized');
@@ -9,3 +8,4 @@ module.exports = {
     UnauthorizedError,
     NotFoundError
 };
+//# sourceMappingURL=index.js.map
